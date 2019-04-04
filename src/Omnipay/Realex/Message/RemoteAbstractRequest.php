@@ -73,7 +73,7 @@ abstract class RemoteAbstractRequest extends AbstractRequest
 
     public function sendData($data)
     {
-        $response = $this->httpClient->request('POST', $this->getEndpoint(), [], http_build_query($data));
+        $response = $this->httpClient->request('POST', $this->getEndpoint(), [], $data);
 
         return $this->createResponse($response->getBody()->getContents());
     }
